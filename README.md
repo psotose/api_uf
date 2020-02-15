@@ -1,24 +1,16 @@
-# README
+Api generada con Rails para obtener valores UF.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Para acceder a los valores se debe hacer el request al endpoint:
 
-Things you may want to cover:
+https://example.com/uf/nombredeusuario/fechadeuf
 
-* Ruby version
+**La fecha de actualización del valor de la UF será el día 01 de cada mes (añomesdia).
 
-* System dependencies
+Para consultar la cantidad de peticiones por usuario, se debe hacer el request al endpoint:
 
-* Configuration
+https://example.com/client/nombredelcliente
 
-* Database creation
+Para ver el listado de clientes que han realizado peticiones, se debe acceder al endpoint:
 
-* Database initialization
+https://example.com/client
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...

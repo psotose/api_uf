@@ -7,26 +7,12 @@ class RequestsController < ApplicationController
 
     def show
         @request = Request.find_by(nombre: params[:id])
+        @count = Request.where(nombre: params[:id]).count
         if @request
-            render json: @request
+            render json: [@request, {peticiones: @count}]
         else    
             render json: {message: 'No existe el usuario'}   
         end     
     end  
     
-    def create
-        @request = Request.new(request_params)
-
-        if @request.save
-            render json: @request, status: :created, location: @request
-        else   
-            render json: @request.errors, status: :unprocessable_entity
-        end     
-    end   
-    
-    private
-
-    def request_params
-        params.require(:request).permit(:nombre)
-    end    
 end

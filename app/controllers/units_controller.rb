@@ -5,7 +5,6 @@ class UnitsController < ApplicationController
     end  
     def show
         @unit = Unit.find_by(fecha: Date.parse(params[:fecha]))
-        #user = request.headers['X-CLIENTE']
         Request.create(nombre: params[:client])
 
         if @unit.present?
